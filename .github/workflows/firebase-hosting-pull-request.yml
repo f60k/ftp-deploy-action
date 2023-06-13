@@ -1,0 +1,21 @@
+
+name: Deploy to Firebase Hosting on Push
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy_firebase_hosting:
+
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - run: yarn install
+
+      - run: yarn run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SOCIAL_LOGIN_CHAP456_E3ABA }}'
+          projectId: social-login-chap456-e3aba
