@@ -1,7 +1,14 @@
-on: push
 name: 🚀 Deploy website on push
+
+on: 
+  push:
+    branches: [main]
+
+
+  workflow_dispatch:
+  
 jobs:
-  web-deploy:
+  ftp-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
