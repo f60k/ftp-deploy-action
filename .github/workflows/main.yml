@@ -24,3 +24,4 @@ jobs:
         server-dir: /home/zhg72lxr84b1/domains/test.hergo.jp/html/
         protocol: ftp
         port: 21
+        local-dir: ./public/
