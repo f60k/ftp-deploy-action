@@ -18,10 +18,10 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp.f60k.com
-        username: zhg72lxr84b1
+        server: ${{ secrets.ftp_server }}
+        username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        server-dir: home/zhg72lxr84b1/domains/sync.hergo.jp/html/
+        server-dir: ${{ secrets.ftp_dir}}
         protocol: ftp
         port: 21
         local-dir: ./public/
